@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <title>admin-symbweb</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500.."
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      #loader {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #loader .container {
+        position: relative;
+      }
+      #loader .logo {
+        margin-top: 380px;
+      }
+
+      #loader .dragon {
+        animation: logo 2s infinite;
+      }
+      @keyframes logo {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          transform: scale(1.15) rotate(-10deg);
+        }
+        75% {
+          transform: scale(1.15) rotate(10deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      #loader .progress {
+        margin-top: 50px;
+        width: 100%;
+      }
+
+      #loader .progress .outer {
+        width: 200px;
+        height: 14px;
+        border-radius: 4px;
+        background: #e0e0e0;
+        overflow: hidden;
+      }
+
+      #loader .progress .inner {
+        width: 0;
+        height: 100%;
+        background: #6f8cd6;
+        animation: loading 2s ease-in-out infinite;
+      }
+      @keyframes loading {
+        100% {
+          width: 100%;
+        }
+      }
+      #loader .fire {
+        position: absolute;
+        transform: rotate(110deg);
+        margin: -130px 0 0 110px;
+        animation: animation-fire 2s infinite
+          cubic-bezier(0.66, 0.07, 0.31, 1.09);
+      }
+      @keyframes animation-fire {
+        0% {
+          transform: scale(0, 0) rotate(110deg);
+          opacity: 0;
+          left: 0px;
+        }
+
+        25% {
+          transform: scale(0, 0) rotate(110deg);
+          opacity: 1;
+          left: 0px;
+          width: 40px;
+        }
+
+        50% {
+          transform: scale(1) rotate(110deg);
+          opacity: 0.8;
+          left: 0px;
+          width: 40px;
+        }
+        75% {
+          width: 50px;
+        }
+
+        100% {
+          transform: scale(1, 1) rotate(110deg);
+          opacity: 0;
+          left: 30px;
+          width: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="container">
+        <div class="logo">
+          <img
+            width="110"
+            src="images/logo-shade.svg"
+            class="dragon"
+          />
+          <div class="icons">
+            <img
+              width="40"
+              src="images/fire.svg"
+              alt="fire"
+              class="fire"
+            />
+          </div>
+        </div>
+        <div class="progress">
+          <div class="outer">
+            <div class="inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
